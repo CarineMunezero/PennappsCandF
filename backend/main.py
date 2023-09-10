@@ -49,7 +49,7 @@ def webhook():
                 status_callback='https://5677-2607-f470-34-2101-af65-57c-8243-9691.ngrok-free.app/'
             )
         return '', 200
-    if not user_sent_message_today(number):
+    if user_sent_message_today(number):
         #Make sure each user only replies once per day to the  challenge
         if (str(ord(user_response.lower()) - 97)) == str(index):
             print(user_response, " ", ord(user_response.lower()) - 97) 
@@ -66,7 +66,15 @@ def webhook():
             else:
                 create_players()
                 update_player(number)
-        
+            
+            more_messages = "Congratulations on completing today's challenge. You win 10 points"
+            player_rank, n_of_players = get_player_ranking(number)
+            more_and_more = f"You are now ranked {player_rank} out of {n_of_players} 🤩"
+            message = client.messages.create(
+                body = more_messages + '\n' + more_and_more, 
+                from_='+18559593981',
+                to='+14752879371'
+            )
         
         else: 
             print(user_response, " ", ord(user_response.lower()) - 97, " ", index) 
@@ -83,6 +91,7 @@ def webhook():
                 from_='+18559593981',
                 to='+14752879371'
             )
+        
     return '', 200
 
 # @app.route('/', methods=['POST'])
