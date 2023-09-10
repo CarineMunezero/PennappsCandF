@@ -4,6 +4,7 @@ from global_functions import *
 import random 
 import daily_challenge 
 from players_info import * 
+import json 
 
 OPENAI_KEY = ""
 METAPHOR_TOKEN = ""
@@ -25,6 +26,14 @@ message = client.messages.create(
     from_ = '+18559593981',
     to = '+14752879371'
 )
+@app.route('/powerank', methods=['GET'])
+def return_rankings(): 
+    with open("players.pickle", "rb") as pk: 
+        text = pickle.load(pk) 
+    # convert text to json 
+    data = json.dumps(text) 
+
+    return data   
 
 @app.route('/webhooks', methods=['POST'])
 def webhook():
