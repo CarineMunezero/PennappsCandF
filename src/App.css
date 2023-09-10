@@ -1,0 +1,57 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+/* App.css */
+body {
+  background-image: url("C:\Users\Carine\Desktop\React template\src\images\financial literacy.jpg"); /* Replace with the correct path to your image */
+  background-size: cover; /* Cover the entire viewport with the background image */
+  background-repeat: no-repeat; /* Prevent background image from repeating */
+  background-attachment: fixed; /* Fixed background, so it doesn't scroll with the content */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+.buttons{
+  position: relative;
+  top: 0;
+  transition: top ease 0.5;
+  background-color: #f2e9dc;
+  font-family: "Poppins", sans-serif;
+}
+.my-image {
+  width: 400px; /* Adjust the width as needed */
+  height: 450px; /* Adjust the height as needed */
+}
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
