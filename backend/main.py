@@ -49,7 +49,7 @@ def webhook():
                 status_callback='https://5677-2607-f470-34-2101-af65-57c-8243-9691.ngrok-free.app/'
             )
         return '', 200
-    if user_sent_message_today(number):
+    if not user_sent_message_today(number):
         #Make sure each user only replies once per day to the  challenge
         if (str(ord(user_response.lower()) - 97)) == str(index):
             print(user_response, " ", ord(user_response.lower()) - 97) 
