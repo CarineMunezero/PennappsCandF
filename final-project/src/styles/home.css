@@ -1,0 +1,159 @@
+@keyframes rotation {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  background: linear-gradient(
+    to bottom,
+    #000020,
+    #000040,
+    #000080,
+    #191970,
+    #4b0082,
+    #800080
+  );
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#text {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: white;
+}
+
+
+#mainMage {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+}
+
+#Astro_Bck {
+  width: 35.5%;
+  height: auto;
+  margin-bottom: 20px;
+  display: block;
+  position: absolute; /* Position the center image absolutely */
+  top: 45%; /* Move it 50% down from the top of the surrounding image */
+  left: 30%; /* Move it 45% from the left of the surrounding image */
+  animation: floatUpwards 2s linear infinite;
+  transform: translate(-50%, -50%); /* Center the center image precisely */
+}
+
+.imageContain {
+  display: flex;
+  justify-content: space-between;
+  width: 700px;
+}
+
+.curroundImage {
+  width: 43%;
+  height: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.curroundImage img.rotateMage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: rotation 75s linear infinite;
+}
+
+@keyframes floatUpwards {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); /* Adjust the floating height as needed */
+  }
+}
+
+/* Add the following styles for the image text */
+.imageRapper {
+  position: relative;
+}
+
+.image-text {
+  font-size: 25px;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  padding: 8px;
+  text-align: center;
+}
+.tooltip {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 3px;
+  font-weight: bold;
+  background-color: transparent;
+  outline: black;
+  color: white;
+  border-radius: 4px;
+
+  opacity: 0;
+  animation: fadeOut 30.5s linear forwards;
+  animation: floatUpwardsMessage 5s linear forwards; /* Apply the floating animation */
+  font-size: 30px;
+
+  /* transition: opacity 0.3s ease-in-out; */
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes floatUpwardsMessage {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px); /* Adjust as needed */
+    opacity: 0;
+  }
+}
+
+.next-button5 {
+  position: fixed;
+  top: 50px; /* Adjust the top value to position the button */
+  left: 40px; /* Add this line to move the button to the top right corner */
+  padding: 40px;
+  background-color: transparent;
+  color: white;
+  border: 4px solid white;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 10px;
+  height:90px;
+  font-weight: 600;
+}
+/* Optionally, you can add hover styles to change the button appearance when hovered */
+.next-button5:hover {
+  background-color: #7a316f; /* Change the background color to a slightly darker red on hover */
+  /* Add any other styles you want for the button on hover */
+}

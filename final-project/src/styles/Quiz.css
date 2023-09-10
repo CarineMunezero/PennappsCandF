@@ -1,0 +1,365 @@
+@import url("https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@100;200;300;400;500;600;700;800&display=swap");
+
+.quiz-container ul li.correct-answer {
+  /* background-color: #008800; */
+  border: 6px solid #008800;
+  cursor: default;
+}
+
+.quiz-container ul li.incorrect-answer {
+  /* background-color: #c44601; */
+  border: 6px solid #c44601;
+  cursor: default;
+}
+.answer-icon {
+  font-size: 1.2em;
+  margin-left: 10px;
+}
+
+.option-container {
+  display: flex;
+  align-items: center;
+}
+
+.answer-icon {
+  margin-left: 10px;
+  font-size: 1.2em;
+}
+
+.choices-container {
+  list-style: none;
+  padding: 0;
+}
+
+.option-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+li {
+  flex-grow: 1;
+}
+
+.answer-icon {
+  font-size: 1.2em;
+}
+
+.correct-icon {
+  color: black;
+}
+
+.wrong-icon {
+  color: black;
+}
+
+.answer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.answer-text {
+  color: #000;
+  /* Your styles for the answer text */
+}
+
+.answer-icon {
+  font-size: 1.2em;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.7); /* Add some opacity */
+  border-radius: 50%; /* Add a bit of blur for a "glow" effect */
+
+  /* This will randomly position the stars */
+  top: calc(100vh * var(--random));
+  left: calc(100vw * var(--random));
+}
+
+.star:before {
+  content: ""; /* This is necessary for the pseudo-element to show */
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5),
+    0 0 10px rgba(255, 255, 255, 0.5); /* Adjusted box-shadow colors and blurring */
+  animation: flicker 1.5s infinite;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+.main-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.star.falling-star {
+  animation: fall 2s linear;
+}
+
+@keyframes fall {
+  from {
+    top: 0;
+  }
+  to {
+    top: 100%;
+  }
+}
+
+.star {
+  position: absolute;
+  /* other styles */
+}
+
+.stars-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: "Anek Malayalam", sans-serif;
+  background: linear-gradient(
+    to bottom,
+    #000020,
+    #000040,
+    #000080,
+    #191970,
+    #4b0082,
+    #800080
+  );
+  color: #070101;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0 30px;
+}
+
+.quiz-container {
+  position: relative;
+  z-index: 1;
+  max-width: 500px;
+  min-width: 250px;
+  border-radius: 4px;
+  margin-top: -10px;
+  padding: 30px 60px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.quiz-container .active-question-no {
+  font-size: 32px;
+  font-weight: 500;
+  color: #800080;
+}
+
+.quiz-container .total-question {
+  font-size: 16px;
+  font-weight: 500;
+  color: #e0dee3;
+}
+
+.quiz-container h2 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+  color: black;
+}
+
+.quiz-container ul {
+  margin-top: 20px;
+  margin-left: -40px;
+}
+
+.quiz-container ul li {
+  text-decoration: none;
+  list-style: none;
+  color: #2d264b;
+  font-size: 16px;
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 16px;
+  padding: 11px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.quiz-container ul .selected-answer {
+  background: #ffd6ff;
+  border: 1px solid #800080;
+}
+
+.quiz-container button {
+  background: linear-gradient(90.04deg, #800080 0.03%, #ffc0cb 99.96%);
+  border-radius: 9px;
+  font-size: 18px;
+  color: #ffffff;
+  padding: 10px 42px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.quiz-container button:disabled {
+  background: #e7e8e9;
+  color: #9fa3a9;
+  cursor: not-allowed;
+}
+
+.flex-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.result h3 {
+  font-size: 24px;
+  letter-spacing: 1.4px;
+  text-align: center;
+  color: black;
+}
+
+.result p {
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+}
+
+.result p span {
+  color: #800080;
+  font-size: 22px;
+}
+.rocket {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 100px; /* Adjust width as needed */
+  height: auto; /* Adjust height as needed */
+  transform: translate(-50%, 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.rocket.launch {
+  animation: launch 4s linear forwards;
+  opacity: 1;
+}
+
+@keyframes launch {
+  0% {
+    transform: translate(-50%, 0vh);
+  }
+  50% {
+    transform: translate(-50%, -50vh);
+  }
+  100% {
+    transform: translate(-50%, -100vh);
+    /* opacity: 0; */
+  }
+}
+
+#rocket {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  animation: launch 10s linear forwards;
+}
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-2deg);
+  }
+  40% {
+    transform: rotate(2deg);
+  }
+  60% {
+    transform: rotate(-2deg);
+  }
+  80% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.shake {
+  animation: shake 1.6s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+#confetti-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* ensure it's behind your content */
+}
+
+#Astro_sit {
+  width: 35.5%;
+  height: auto;
+  margin-bottom: 20px;
+  display: block;
+  position: absolute; /* Position the center image absolutely */
+  top: 45%; /* Move it 50% down from the top of the surrounding image */
+  left: 5%; /* Move it 45% from the left of the surrounding image */
+  animation: floatUpwards 2s linear infinite;
+  transform: translate(-50%, -50%); /* Center the center image precisely */
+}
+
+/* Add more pieces with different colors, positions and animation delays as needed. */
+
+.bottom-content11 {
+  position: absolute;
+  bottom: -1050px;
+  left: 820px;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Adjust the astronaut image size if needed */
+.bottom-content11 img {
+  max-height: 1250px; /* You can adjust this value to fit your needs */
+  margin: 10px;
+  width: 2000px;
+}
+
+.next-button {
+  position: fixed;
+  top: 10px; /* Adjust the top value to position the button */
+  padding: 10px 20px;
+  background-color: transparent;
+  color: white;
+  border: 4px solid white;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 100px;
+  font-weight: 600;
+}
