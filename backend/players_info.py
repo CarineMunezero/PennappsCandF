@@ -23,3 +23,9 @@ def get_all_players_score():
         players = pickle.load(db) 
 
     return players
+
+def get_player_ranking(number): 
+    players = get_all_players_score()
+    sorted_players = sorted(players.items(), key=lambda x: x[1], reverse=True)
+    player_ranking = [player[0] for player in sorted_players].index(str(number)) + 1
+    return player_ranking, len(sorted_players) 
