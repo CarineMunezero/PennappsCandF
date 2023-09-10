@@ -1,0 +1,122 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sun {
+  width: 250px; /* Adjust the size as needed */
+  height: 250px; /* Adjust the size as needed */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: rotateSun 85s linear infinite;
+  z-index: 1;
+}
+
+.planet1 {
+  width: 85px; /* Adjust the size as needed */
+  height: 85px; /* Adjust the size as needed */
+  left: 65%;
+  animation: orbit1 10s linear infinite;
+}
+
+.planet2 {
+  width: 80px;
+  height: 80px;
+  top: 45%;
+  left: 30%;
+  animation: orbit2 47s linear infinite;
+}
+
+.planet3 {
+  width: 50px;
+  height: 50px;
+  left: 50%;
+  animation: orbit3 80s linear infinite;
+}
+
+.planet4 {
+  width: 55px;
+  height: 55px;
+  left: 50%;
+  animation: orbit4 25s linear infinite;
+}
+
+.planet5 {
+  width: 25px;
+  height: 25px;
+  left: 50%;
+  animation: orbit5 12s linear infinite;
+}
+
+.planet1.glow {
+  /* Add the glowing effect styles */
+ 
+  background-color: #ebbbf6;
+  border-radius:50%;
+  box-shadow: 0 0 10px 5px rgb(251, 217, 255); /* Customize the glow effect as you like */
+  transition: box-shadow 0.3s ease-in-out; /* Add a smooth transition for the glow effect */
+}
+
+@keyframes rotateSun {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes orbit1 {
+  from {
+    transform: rotate(0deg) translateX(250px) translateY(0px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(250px) translateY(0px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit2 {
+  from {
+    transform: rotate(0deg) translateX(400px) translateY(0px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(400px) translateY(0px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit3 {
+  from {
+    transform: rotate(0deg) translateX(350px) translateY(0px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(500px) translateY(0px) rotate(-360deg);
+  }
+}
+
+
+
+
+@keyframes orbit4 {
+  from {
+    transform: rotate(0deg) translateX(180px) translateY(0px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(350px) translateY(0px) rotate(-360deg);
+  }
+}
+
+
+@keyframes orbit5 {
+  from {
+    transform: rotate(0deg) translateX(300px) translateY(0px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(300px) translateY(0px) rotate(-360deg);
+  }
+}

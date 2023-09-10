@@ -1,0 +1,97 @@
+/* Lesson.css */
+* {
+  color: #ccc;
+}
+
+.center-align {
+  text-align: right;
+  padding: 90px;
+}
+
+.Row {
+  margin: -2px 0;
+}
+
+.Row1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.Video {
+  width: 143%;
+}
+
+/* Adjust styles for YouTube component (you may add more styles here if needed) */
+.YouTube > iframe {
+  width: 100%;
+}
+
+.Container-text {
+  border: 1px solid #ccc;
+  padding: 4px;
+  max-height: 270px; /* Set the maximum height you want for the text container */
+  overflow-y: auto; /* Show vertical scrollbar when content exceeds the maximum height */
+
+  /* Modern scrollbar styling for webkit-based browsers */
+  scrollbar-width: thin;
+  scrollbar-color: white transparent; /* Pink thumb and transparent track */
+  width: 15%;
+}
+
+/* Modern scrollbar styling for webkit-based browsers */
+.Container-text::-webkit-scrollbar {
+  width: 3px;
+}
+
+.Container-text::-webkit-scrollbar-track {
+  background: transparent; /* Transparent track */
+}
+
+.Container-text::-webkit-scrollbar-thumb {
+  background-color: white; /* Pink thumb */
+  border-radius: 5px;
+}
+.next-button {
+  position: fixed;
+  top: 593.2px;
+  right: 50px;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 100px;
+}
+
+.transcript-text {
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  max-height: 270px; /* Set the maximum height you want for the text container */
+  overflow-y: auto; /* Show vertical scrollbar when content exceeds the maximum height */
+  width: 575px;
+
+  /* Modern scrollbar styling for webkit-based browsers */
+  scrollbar-width: thin;
+  scrollbar-color: white transparent; /* Pink thumb and transparent track */
+}
+
+/* Modern scrollbar styling for webkit-based browsers */
+.transcript-text::-webkit-scrollbar {
+  width: 3px;
+}
+
+.transcript-text::-webkit-scrollbar-track {
+  background: transparent; /* Transparent track */
+}
+
+.transcript-text::-webkit-scrollbar-thumb {
+  background-color: white; /* Pink thumb */
+  border-radius: 5px;
+}
+
+.center-text {
+  text-align: center;
+}
